@@ -1,2 +1,14 @@
 #!/bin/bash
-echo "hello there"
+
+set -euo pipefail
+
+if ! command -v chezmoi >/dev/null; then
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:NautalisCat/dotfiles.git
+fi
+
+exit 0
+
+
+
+
+
